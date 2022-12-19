@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<configuracion>
+    <!--
+        ********************************************
+        *   Parametros de la base de datos MYSQL   *
+        ********************************************
+        Esta conexion va con (pip install MySQL-python)
+        host: Host donde se encuentra la base de datos
+        user: Usuario de acceso a la base de datos
+        passwd: Contrañesa para que pueda acceder el usuario a la base de datos
+        database: Nombre de la base de datos
+
+        Ejemplo: <add name="nombre" connectionString="host='127.0.0.1:3306',user='tu usuario',passwd='tu contraseña',database='tu bbdd'"/>
+  
+		<connectionBD key="connection" value="host='127.0.0.1:3306',user='user',passwd='1234',database='prueba'" />
+
+        **********************************************
+        *   Parametros de la base de datos MongoDB   *
+        **********************************************
+        Esta conexion es MongoClient 
+        mongodb:// es un prefijo necesario para identificar que se trata de una cadena en el formato de conexión estándar.
+        usuario:contraseña@ Usuario y contraseña de acceso a la base de datos.
+        host es la única parte requerida del URI. Identifica un nombre de host, una dirección IP o un socket de dominio Unix
+        port es opcional y su valor predeterminado es :27017 si no se proporciona.
+        base de datos es el nombre de la base de datos para iniciar sesión 
+
+        Ejemplo: mongodb://username:password@host:port/database
+    
+        <acceso name="mongodb" value="mongodb://user:1234@127.0.0.1:27017/prueba" />
+    -->
+
+	<connectionString>
+        <add key="mysql.port" value="3306" />
+        <add key="mysql.host" value="127.0.0.1" />
+        <add key="mysql.username" value="root" />
+        <add key="mysql.password" value="1234" />
+        <add key="mysql.database" value="empresa" />
+
+
+        <add key="mongodb.port" value="27017" />
+        <add key="mongodb.host" value="127.0.0.1" />
+        <add key="mongodb.username" value="root" />
+        <add key="mongodb.password" value="1234" />
+        <add key="mongodb.database" value="Empresa" />
+    </connectionString>
+
+	<appSetting>
+        <!-- 
+            **********************************************
+            *   DATOS DE CONFIFURACION Servidor CORREO   *
+            **********************************************
+            email.Port
+                * Puerto 25 TCP para tráfico sin cifrar.
+                * Puerto 465 TCP para tráfico cifrado SSL (SMTPS).
+                * Puerto 587 TCP como puerto alternativo para SMTPS con TLS.
+
+            email.Servidor: Nombre de servidor SMTP
+            email.User: Usuario de SMTP del Servidor (su dirección de correo)
+            email.Password: Contraseña de SMTP del servidor (su contraseña)
+            email.Remitente: Quien envia el email
+            email.Destino: Quien recive el email, esto suele sacarse de la base de datos
+
+		-->
+		<add key="email.Port" value="465" /> 
+        <add key="email.Servidor" value="smtp.gmail.com" />
+        <add key="email.User" value="prueba@gmail.com" />
+        <add key="email.Password" value="1234" />
+        <add key="email.Remitente" value="prueba@gmail.com" />
+        <add key="email.Destino" value="prueba@gmail.com" />
+		<add key="prueba" value="1234"/>
+
+        <add key="ssh.port" value="22" />
+        <add key="ssh.host" value="10.200.10.100" />
+        <add key="ssh.username" value="user" />
+        <add key="ssh.password" value="1234" />
+        <add key="ssh.remote_bind_address" value="127.0.0.1" />
+        <add key="ssh.remote_bind_address_port" value="3306" />
+
+    </appSetting>
+	
+</configuracion>
